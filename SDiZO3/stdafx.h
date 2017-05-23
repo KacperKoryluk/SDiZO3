@@ -9,6 +9,12 @@
 
 #include <stdio.h>
 #include <tchar.h>
+#include <iostream>
+#include <cstdlib>
+#include <cstdio>
+#include <conio.h>
+
+using namespace std;
 
 
 
