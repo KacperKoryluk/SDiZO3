@@ -14,6 +14,11 @@
 #include <cstdio>
 #include <conio.h>
 
+#include <list>
+#include <queue>
+#include <vector>
+
+
 using namespace std;
 
 
