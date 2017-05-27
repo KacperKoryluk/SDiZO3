@@ -7,12 +7,43 @@ SalesmanProblem::SalesmanProblem()
 }
 
 
-SalesmanProblem::~SalesmanProblem()
+SalesmanProblem::~SalesmanProblem()	//Uwa¿aæ tutaj
 {
+	for (int i = 0; i < amountOfCities; i++)
+	{
+		delete[] distanceMatrix[i];
+	}
+	delete[] distanceMatrix;
 }
 
-void SalesmanProblem::loadFromFile(std::string fileName)
+bool SalesmanProblem::loadFromFile(std::string fileName)
 {
+	fstream file;
+	file.open(fileName, ios::in);
+
+	if (file.is_open())
+	{
+		if (file.fail())
+		{
+			return false;
+		}
+		file >> amountOfCities;
+		distanceMatrix = new int*[amountOfCities];
+		for (int i = 0; i < amountOfCities; i++)
+		{
+			distanceMatrix[i] = new int[amountOfCities];
+		}
+
+		//Uzupe³niæ! Zapytaæ o dok³adn¹ strukturê pliku
+
+	}
+	else
+	{
+		return false;
+	}
+
+	file.close();
+
 }
 
 void SalesmanProblem::greedyAlgorithm()

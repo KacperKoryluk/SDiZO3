@@ -4,15 +4,15 @@ class KnapsackProblem :
 	public Algorithm
 {
 private:
-	int numberOfItems;
+	int amountOfItems;
 	int knapsackCapacity;
 	vector <std::pair<int, int>> items; //Wektor par items[numer przedmiotu] = para[waga, wartoœæ]
 	
 public:
 	KnapsackProblem();
 	~KnapsackProblem();
-	void loadFromFile(std::string fileName);
-	void greedyAlgorithm();
+	bool loadFromFile(std::string fileName);
+	void greedyAlgorithm();	//Wersja zach³anna algorytmu aproksymacyjnego
 	void bruteforce();
 };
 

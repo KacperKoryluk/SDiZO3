@@ -10,6 +10,6 @@ public:
 	~Algorithm();
 	virtual void greedyAlgorithm() {};
 	virtual void bruteforce() {};
-	virtual void loadFromFile(std::string fileName) {};
+	virtual bool loadFromFile(std::string fileName) {};
 };
 

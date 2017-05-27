@@ -4,11 +4,12 @@ class SalesmanProblem :
 	public Algorithm
 {
 private:
-	
+	int amountOfCities;
+	int **distanceMatrix; //WskaŸnik na tablicê wskaŸników tab[miasto i][miasto j] = odleg³oœæ miasta i od miasta j
 public:
 	SalesmanProblem();
 	~SalesmanProblem();
-	void loadFromFile(std::string fileName);
+	bool loadFromFile(std::string fileName);
 	void greedyAlgorithm();
 	void bruteforce();
 };
