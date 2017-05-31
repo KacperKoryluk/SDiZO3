@@ -34,7 +34,13 @@ bool SalesmanProblem::loadFromFile(std::string fileName)
 			distanceMatrix[i] = new int[amountOfCities];
 		}
 
-		//Uzupe³niæ! Zapytaæ o dok³adn¹ strukturê pliku
+		for (int i = 0; i < amountOfCities; i++)
+		{
+			for (int j = 0; j < amountOfCities; j++)
+			{
+				file >> distanceMatrix[i][j];
+			}
+		}
 
 	}
 	else
