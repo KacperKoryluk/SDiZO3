@@ -49,7 +49,7 @@ bool SalesmanProblem::loadFromFile(std::string fileName)
 	}
 
 	file.close();
-
+	return true;
 }
 
 void SalesmanProblem::greedyAlgorithm()
