@@ -44,6 +44,7 @@ bool KnapsackProblem::loadFromFile(std::string fileName)	//Zweryfikowaæ poprawno
 	}
 
 	file.close();
+	return true;
 }
 
 void KnapsackProblem::greedyAlgorithm() //Sprawdziæ poprawnoœæ na zbiorze tesotwym
@@ -99,7 +100,7 @@ void KnapsackProblem::bruteforce()	//Sprawdziæ poprawnoœæ na zbiorze testowym
 	int tempValue;
 	int j;
 
-	for (int i = 0; i < 2 ^ amountOfItems; i++)
+	for (int i = 0; i < (2 ^ amountOfItems); i++)
 	{
 		j = amountOfItems;
 		tempWeight = 0;
