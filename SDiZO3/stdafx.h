@@ -14,10 +14,18 @@
 #include <cstdio>
 #include <conio.h>
 #include <fstream>
+#include <string>
+#include <math.h>
 
 #include <list>
 #include <queue>
 #include <vector>
+
+
+#include "Algorithm.h"
+#include "KnapsackProblem.h"
+#include "SalesmanProblem.h"
+
 
 
 using namespace std;

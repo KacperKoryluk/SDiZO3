@@ -1,12 +1,12 @@
 #pragma once
-#include "Algorithm.h"
+#include "stdafx.h"
 class KnapsackProblem :
 	public Algorithm
 {
 private:
 	int amountOfItems;
 	int knapsackCapacity;
-	vector <std::pair<int, int>> items; //Wektor par items[numer przedmiotu] = para[waga, wartoœæ]
+	std::vector <std::pair<int, int>> items; //Wektor par items[numer przedmiotu] = para[waga, wartoœæ]
 	
 public:
 	KnapsackProblem();
@@ -14,5 +14,6 @@ public:
 	bool loadFromFile(std::string fileName);
 	void greedyAlgorithm();	//Wersja zach³anna algorytmu aproksymacyjnego
 	void bruteforce();
+	void print();
 };
 
