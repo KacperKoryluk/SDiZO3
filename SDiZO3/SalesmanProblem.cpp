@@ -54,7 +54,7 @@ bool SalesmanProblem::loadFromFile(std::string fileName)
 
 void SalesmanProblem::greedyAlgorithm()
 {
-	int *visited = new int[amountOfCities];
+	int *visited = new int[amountOfCities]; //visited, 1 oznacza odwiedzono, 0 - miasto nie by³o odwiedzone
 	vector<int> bestRoute;
 	int totalCost = 0;
 	for (int i = 0; i < amountOfCities; i++)
@@ -65,9 +65,9 @@ void SalesmanProblem::greedyAlgorithm()
 	int start = 0; //Przyjmujê pierwsze miasto jako punkt startowy i koñcowy podró¿y
 	pair <int, int> tempClosestCity; // Tymczasowe najbli¿sze miasto, <odleg³oœæ, indeks>
 	priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>> > tempRouteQueue; //Kolejka dróg, wybiera najkrótsz¹ <Koszt, Miasto docelowe>
-	int currentCity = start;
-	bestRoute.push_back(start);
-	visited[start] = 1;
+	int currentCity = start; //Aktualnie odwiedzane miasto
+	bestRoute.push_back(start); //Umieszczam punkt startowy w œcie¿ce
+	visited[start] = 1; 
 	
 	for (int i = 0; i < amountOfCities-1; i++)
 	{
@@ -77,11 +77,11 @@ void SalesmanProblem::greedyAlgorithm()
 			tempRouteQueue.push(make_pair(distanceMatrix[i][j], j));
 			
 		}
-		tempClosestCity = tempRouteQueue.top();
-		totalCost += tempClosestCity.first;
+		tempClosestCity = tempRouteQueue.top(); //Wyci¹gam z kolejki miasto o najmniejszym koszcie dotarcia
+		totalCost += tempClosestCity.first; 
 		bestRoute.push_back(tempClosestCity.second);
 		visited[tempClosestCity.second] = 1;
-		currentCity = tempClosestCity.second;
+		currentCity = tempClosestCity.second; //"Idê" do miasta o najmniejszym koszcie
 
 		while (tempRouteQueue.size() >= 1)
 		{
@@ -90,7 +90,7 @@ void SalesmanProblem::greedyAlgorithm()
 		
 	}
 			
-	totalCost += distanceMatrix[amountOfCities - 1][0]; // Dodajê koszt dojœcia do ostatniego miasta
+	totalCost += distanceMatrix[amountOfCities - 1][0]; // Dodajê koszt dojœcia do pierwszego miasta
 	bestRoute.push_back(start); // Dodajê numer pierwszego wierzcho³ka
 
 	//Wyœwietlanie
@@ -105,8 +105,10 @@ void SalesmanProblem::greedyAlgorithm()
 	cout << endl;
 }
 
-void SalesmanProblem::bruteforce()
+void SalesmanProblem::bruteforce() //Permutacje wszystkich œcie¿ek
 {
+
+
 }
 
 void SalesmanProblem::print()
