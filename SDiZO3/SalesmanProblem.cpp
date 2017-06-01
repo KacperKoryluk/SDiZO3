@@ -59,3 +59,27 @@ void SalesmanProblem::greedyAlgorithm()
 void SalesmanProblem::bruteforce()
 {
 }
+
+void SalesmanProblem::print()
+{
+	cout << "Ilosc miast: " << amountOfCities << endl;
+
+	cout << setw(4) << "  ";
+	for (int i = 0; i < amountOfCities; i++)
+	{
+		cout << setw(3) << " | " << setw(3) << i;
+	}
+	cout << setw(3) << " | " << endl;
+	for (int i = 0; i < amountOfCities; i++)
+	{
+		cout << i << setw(3) << "|";
+		for (int j = 0; j < amountOfCities; j++)
+		{
+			
+				cout << setw(3) << " : " << setw(3) << distanceMatrix[i][j];
+			
+			
+		}
+		cout << setw(3) << " : " << endl;
+	}
+}

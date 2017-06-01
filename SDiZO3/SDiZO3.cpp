@@ -55,6 +55,7 @@ void salesmanMenu()
 	cout << "Menu problemu komiwojazera, wybor rozwiazania:" << endl
 		<< "1 - Najbli¿szy s¹siad" << endl
 		<< "2 - Przeglad zupelny" << endl
+		<< "3 - Wyswietl dane pobrane z pliku" << endl
 		<< "c - Czysc ekran. " << endl
 		<< "ESC - Wyjdz." << endl;
 
@@ -69,11 +70,15 @@ void salesmanMenu()
 			break;
 		case '2':
 			break;
+		case '3':
+			_currentAlgorithm->print();
+			break;
 		case 'c':
 			system("CLS");
 			cout << "Menu problemu komiwojazera, wybor rozwiazania:" << endl
 				<< "1 - " << endl
 				<< "2 - Przeglad zupelny" << endl
+				<< "3 - Wyswietl dane pobrane z pliku" << endl
 				<< "c - Czysc ekran. " << endl
 				<< "ESC - Wyjdz." << endl;
 			break;
@@ -114,7 +119,16 @@ void mainMenu()
 			else cout << "Operacja nie powiodla sie! Nie znaleziono pliku." << endl;
 			break;
 		case '2':
-			//Dodaæ wczytywanie danych z pliku
+			_currentAlgorithm = new SalesmanProblem();
+			cout << "Nazwa pliku z danymi: " << endl;
+			cin >> fileName;
+			if (_currentAlgorithm->loadFromFile(fileName))
+			{
+				knapsackMenu();
+
+				delete _currentAlgorithm;
+			}
+			else cout << "Operacja nie powiodla sie! Nie znaleziono pliku." << endl;
 			salesmanMenu();
 			break;
 		case 'c':

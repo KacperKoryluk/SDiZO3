@@ -12,5 +12,6 @@ public:
 	bool loadFromFile(std::string fileName);
 	void greedyAlgorithm();
 	void bruteforce();
+	void print();
 };
 
