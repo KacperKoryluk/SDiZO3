@@ -67,8 +67,10 @@ void salesmanMenu()
 		switch (decision)
 		{
 		case '1':
+			_currentAlgorithm->greedyAlgorithm();
 			break;
 		case '2':
+			_currentAlgorithm->bruteforce();
 			break;
 		case '3':
 			_currentAlgorithm->print();
@@ -124,12 +126,12 @@ void mainMenu()
 			cin >> fileName;
 			if (_currentAlgorithm->loadFromFile(fileName))
 			{
-				knapsackMenu();
+				salesmanMenu();
 
 				delete _currentAlgorithm;
 			}
 			else cout << "Operacja nie powiodla sie! Nie znaleziono pliku." << endl;
-			salesmanMenu();
+			
 			break;
 		case 'c':
 			system("CLS");

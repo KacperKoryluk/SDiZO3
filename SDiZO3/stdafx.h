@@ -21,6 +21,7 @@
 #include <list>
 #include <queue>
 #include <vector>
+#include <functional>
 
 
 #include "Algorithm.h"
