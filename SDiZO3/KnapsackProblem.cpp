@@ -96,6 +96,8 @@ void KnapsackProblem::greedyAlgorithm() //Sprawdziæ poprawnoœæ na zbiorze tesotw
 		}
 	}
 
+
+	delete[] itemSet;
 }
 
 

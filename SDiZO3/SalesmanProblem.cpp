@@ -103,6 +103,8 @@ void SalesmanProblem::greedyAlgorithm()
 	}
 	cout << bestRoute[amountOfCities];
 	cout << endl;
+
+	delete[] visited;
 }
 
 void SalesmanProblem::bruteforce() //Permutacje wszystkich œcie¿ek
@@ -148,6 +150,9 @@ void SalesmanProblem::bruteforce() //Permutacje wszystkich œcie¿ek
 		cout << bestRoute[i] << " --> ";
 	}
 	cout << "0" << endl;
+
+	delete[] cities;
+	delete[] bestRoute;
 }
 
 void SalesmanProblem::print()

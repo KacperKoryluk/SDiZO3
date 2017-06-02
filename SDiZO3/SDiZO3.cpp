@@ -53,7 +53,7 @@ void knapsackMenu()
 void salesmanMenu()
 {
 	cout << "Menu problemu komiwojazera, wybor rozwiazania:" << endl
-		<< "1 - Najbli¿szy s¹siad" << endl
+		<< "1 - Najblizszy sasiad" << endl
 		<< "2 - Przeglad zupelny" << endl
 		<< "3 - Wyswietl dane pobrane z pliku" << endl
 		<< "c - Czysc ekran. " << endl
@@ -78,7 +78,7 @@ void salesmanMenu()
 		case 'c':
 			system("CLS");
 			cout << "Menu problemu komiwojazera, wybor rozwiazania:" << endl
-				<< "1 - " << endl
+				<< "1 - Najblizszy sasiad " << endl
 				<< "2 - Przeglad zupelny" << endl
 				<< "3 - Wyswietl dane pobrane z pliku" << endl
 				<< "c - Czysc ekran. " << endl
