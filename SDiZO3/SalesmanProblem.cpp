@@ -107,8 +107,47 @@ void SalesmanProblem::greedyAlgorithm()
 
 void SalesmanProblem::bruteforce() //Permutacje wszystkich œcie¿ek
 {
+	int *cities = new int[amountOfCities]; //Tablica miast
+	int tempCost = 0;
+	int bestCost = 0;
+	int *bestRoute = new int[amountOfCities];
+	for (int i = 0; i < amountOfCities; i++)
+	{
+		cities[i] = i;
+	}
+
+	sort(cities, cities+amountOfCities);
+
+	do
+	{
+		tempCost = 0;
+		for (int i = 0; i < amountOfCities-1; i++)
+		{
+			tempCost += distanceMatrix[i][i + 1];
+		}
+		tempCost += distanceMatrix[amountOfCities - 1][0];
+
+		if (tempCost < bestCost || bestCost == 0)
+		{
+			bestCost = tempCost;
+			for (int i = 0; i < amountOfCities; i++)
+			{
+				bestRoute[i] = cities[i];
+			}
+		}
+
+	} while (next_permutation(cities, cities + amountOfCities));
+	
+
+	//Wyœwietlanie
 
 
+	cout << "Koszt: " << bestCost << endl << "Najlepsza droga: " << endl;
+	for (int i = 0; i < amountOfCities; i++)
+	{
+		cout << bestRoute[i] << " --> ";
+	}
+	cout << "0" << endl;
 }
 
 void SalesmanProblem::print()

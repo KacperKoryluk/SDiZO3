@@ -22,6 +22,7 @@
 #include <queue>
 #include <vector>
 #include <functional>
+#include <algorithm>
 
 
 #include "Algorithm.h"
