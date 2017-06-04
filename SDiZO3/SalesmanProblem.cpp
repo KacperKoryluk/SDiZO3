@@ -73,12 +73,11 @@ void SalesmanProblem::greedyAlgorithm()
 	{
 		for (int j = 0; j < amountOfCities; j++)
 		{
-			if (visited[j]==0)
-			tempRouteQueue.push(make_pair(distanceMatrix[i][j], j));
+			if (visited[j] == 0 && distanceMatrix[currentCity][j] != 0)
+			tempRouteQueue.push(make_pair(distanceMatrix[currentCity][j], j));
 			
 		}
 		tempClosestCity = tempRouteQueue.top(); //Wyci¹gam z kolejki miasto o najmniejszym koszcie dotarcia
-		totalCost += tempClosestCity.first; 
 		bestRoute.push_back(tempClosestCity.second);
 		visited[tempClosestCity.second] = 1;
 		currentCity = tempClosestCity.second; //"Idê" do miasta o najmniejszym koszcie
@@ -89,9 +88,12 @@ void SalesmanProblem::greedyAlgorithm()
 		}
 		
 	}
-			
-	totalCost += distanceMatrix[amountOfCities - 1][0]; // Dodajê koszt dojœcia do pierwszego miasta
 	bestRoute.push_back(start); // Dodajê numer pierwszego wierzcho³ka
+
+	for (int i = 0; i < bestRoute.size()-1; i++)
+	{
+		totalCost += distanceMatrix[bestRoute[i]][bestRoute[i + 1]];
+	}
 
 	//Wyœwietlanie
 
@@ -118,7 +120,7 @@ void SalesmanProblem::bruteforce() //Permutacje wszystkich œcie¿ek
 		cities[i] = i;
 	}
 
-	sort(cities, cities+amountOfCities);
+	//sort(cities, cities+amountOfCities);
 
 	do
 	{
