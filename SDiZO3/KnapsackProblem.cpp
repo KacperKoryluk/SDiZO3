@@ -60,7 +60,7 @@ void KnapsackProblem::greedyAlgorithm() //Sprawdziæ poprawnoœæ na zbiorze tesotw
 	for (int i = 0; i < amountOfItems; i++)
 	{
 	
-		itemQueue->push(make_pair(make_pair((items[i].second / items[i].first), i), items[i]));
+		itemQueue->push(make_pair(make_pair(((double)items[i].second / items[i].first), i), items[i]));
 		itemSet[i] = 0;
 	}
 
